@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jQuery" Version="3.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WS.Core.ApplicationService\WS.Core.ApplicationService.csproj" />
+    <ProjectReference Include="..\WS.Core.Contracts\WS.Core.Contracts.csproj" />
+    <ProjectReference Include="..\WS.Infrastruture.Data\WS.Infrastruture.Data.csproj" />
+    <ProjectReference Include="..\WS.Infrastruture.Sql\WS.Infrastruture.Sql.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\baguetteBox.min.js" />
+    <None Include="wwwroot\js\bootsnav.js" />
+    <None Include="wwwroot\js\bootstrap-select.js" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\contact-form-script.js" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\form-validator.min.js" />
+    <None Include="wwwroot\js\images-loded.min.js" />
+    <None Include="wwwroot\js\inewsticker.js" />
+    <None Include="wwwroot\js\isotope.min.js" />
+    <None Include="wwwroot\js\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\js\jquery-ui.js" />
+    <None Include="wwwroot\js\jquery.nicescroll.min.js" />
+    <None Include="wwwroot\js\jquery.superslides.min.js" />
+    <None Include="wwwroot\js\owl.carousel.min.js" />
+    <None Include="wwwroot\js\popper.min.js" />
+  </ItemGroup>
+
+</Project>
