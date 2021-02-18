@@ -46,7 +46,7 @@ namespace PresentataionHost
 
             services.AddScoped<IOrderRepository, OrederRepository>();
             services.AddScoped<IOrderService, OrderService>();
-
+          
             services.AddSession();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
@@ -63,10 +63,10 @@ namespace PresentataionHost
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
-
+           
             app.UseRouting();
             app.UseSession();
-
+            app.UseCookiePolicy();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
