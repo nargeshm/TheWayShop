@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+
 }
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>ThewayShop - Ecommerce</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -35,14 +36,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="~/css/custom.css">
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
-<body>
+<body  id="box" >
 
     <!-- Start Main Top -->
     <div class="main-top">
@@ -82,18 +78,18 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="custom-select-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-						<option>¥ JPY</option>
-						<option>$ USD</option>
-						<option>€ EUR</option>
-					</select>
+                        <select id="basic1" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                            <option>¥ JPY</option>
+                            <option>$ USD</option>
+                            <option>€ EUR</option>
+                        </select>
                     </div>
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +11 900 800 100</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a asp-controller="Home" asp-action="Shop" >🛒 Shop</a></li>
+                            <li><a asp-controller="Home" asp-action="Shop">🛒 Shop</a></li>
                             <li><a href="#">Our location</a></li>
                             <li><a href="#">Contact Us</a></li>
                         </ul>
@@ -103,7 +99,6 @@
         </div>
     </div>
     <!-- End Main Top -->
-
     <!-- Start Main Top -->
     <header class="main-header">
         <!-- Start Navigation -->
@@ -112,12 +107,11 @@
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
                     <a class="navbar-brand" href="index.html"><img src="~/images/logo.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
-
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
@@ -128,19 +122,19 @@
                             <ul class="dropdown-menu megamenu-content" role="menu">
                                 <li>
                                     <div class="row">
-                                         <!-- add a foreach to show categories-->
-                                       @* @foreach (var item in Model)
-                                        {
-                                            
-                                        }*@
+                                        <!-- add a foreach to show categories-->
+                                        @* @foreach (var item in Model)
+                                            {
+
+                                            }*@
                                         <div class="col-menu col-md-3">
                                             <h6 class="title">TOP</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Jackets" >Jackets</a></li>
-                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Shirts" >Shirts</a></li>
-                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Sweaters" >Sweaters & Cardigans</a></li>
-                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="T-shirts" >T-shirts</a></li>
+                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Jackets">Jackets</a></li>
+                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Shirts">Shirts</a></li>
+                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Sweaters">Sweaters & Cardigans</a></li>
+                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="T-shirts">T-shirts</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -149,8 +143,8 @@
                                             <h6 class="title">BOTTOM</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Swimwear" >Swimwear</a></li>
-                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Skirts" >Skirts</a></li>
+                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Swimwear">Swimwear</a></li>
+                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Skirts">Skirts</a></li>
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Jeans">Jeans</a></li>
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Trousers">Trousers</a></li>
                                                 </ul>
@@ -162,7 +156,7 @@
                                             <div class="content">
                                                 <ul class="menu-col">
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Top Wear">Top Wear</a></li>
-                                                    <li><a  asp-controller="Home" asp-action="Product" asp-route-Category="Party">Party wear</a></li>
+                                                    <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Party">Party wear</a></li>
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Bottom">Bottom Wear</a></li>
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Indian">Indian Wear</a></li>
                                                 </ul>
@@ -188,27 +182,28 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-controller="Cart" asp-action="Cart" asp-route-data="">Cart</a></li>
-                                <li><a asp-controller="Cart" asp-action="Checkout" asp-route-data="">Checkout</a></li>
-                                <li><a asp-controller="Cart" asp-action="MyAccount" asp-route-data="">My Account</a></li>
-                                <li><a asp-controller="Cart" asp-action="Wishlist" asp-route-data="">Wishlist</a></li>
-                                <li><a asp-controller="Cart" asp-action="ShopDetail" asp-route-data="">Shop Detail</a></li>
+                                <li><a asp-controller="Cart" asp-action="Index" >Cart</a></li>
+                                <li><a asp-action="Index" asp-controller="Checkout">Checkout</a></li>
+                                <li><a asp-controller="MyAccount" asp-action="Index" >My Account</a></li>
+                                <li><a asp-controller="Home" asp-action="Wishlist" >Wishlist</a></li>
+                          
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Service">Our Service</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
-
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu"><a href="#">
-						<i class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span>
-					</a></li>
+                        <li class="side-menu">
+                            <a href="#">
+                                <i class="fa fa-shopping-bag"></i>
+                                <span class="badge">3</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
@@ -247,7 +242,6 @@
         <!-- End Navigation -->
     </header>
     <!-- End Main Top -->
-
     <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
@@ -259,7 +253,6 @@
         </div>
     </div>
     <!-- End Top Search -->
-
     <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
@@ -267,7 +260,7 @@
                 <div class="col-lg-12">
                     <h2>Shop</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" > Home </a></li>
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index"> Home </a></li>
                         <li class="breadcrumb-item active">Shop</li>
                     </ul>
                 </div>
@@ -275,7 +268,6 @@
         </div>
     </div>
     <!-- End All Title Box -->
-
     <!-- Start Shop Page  -->
     <div class="shop-box-inner">
         <div class="container">
@@ -284,8 +276,8 @@
                     <div class="product-categori">
                         <div class="search-product">
                             <form asp-controller="Home" asp-action="Search">
-                                <input  value="q"  class="form-control" placeholder="Search here..." type="text">
-                                <button type="submit" > <i class="fa fa-search"></i> </button>
+                                <input id="q"  class="form-control" placeholder="Search here..." type="text" />
+                                <button onclick="FilterBar(q)" type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
                         <div class="filter-sidebar-left">
@@ -294,34 +286,36 @@
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
                                 <div class="list-group-collapse sub-men">
-                                    <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Clothing <small class="text-muted">(100)</small>
-								</a>
+                                    <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">
+                                        Clothing <small class="text-muted">(100)</small>
+                                    </a>
                                     <div class="collapse show" id="sub-men1" data-parent="#list-group-men">
                                         <div class="list-group">
-                                             <!--add ajax function!!!  -->
-                                            <a href="#"  class="list-group-item list-group-item-action active">T-Shirts <small class="text-muted">(50)</small></a>
-                                            <a href="#" onclick=""  value="Polo" class="list-group-item list-group-item-action">Polo T-Shirts <small class="text-muted">(10)</small></a>
+                                            <!--add ajax function!!!  -->
+                                            <a href="#" class="list-group-item list-group-item-action active">T-Shirts <small class="text-muted">(50)</small></a>
+                                            <a href="#" onclick="" value="Polo" class="list-group-item list-group-item-action">Polo T-Shirts <small class="text-muted">(10)</small></a>
                                             <a href="#" onclick="" value="RoundNeck" class="list-group-item list-group-item-action">Round Neck T-Shirts <small class="text-muted">(10)</small></a>
-                                            <a href="#" onclick=""  value="VNeck" class="list-group-item list-group-item-action">V Neck T-Shirts <small class="text-muted">(10)</small></a>
-                                            <a href="#" onclick=""  value="Hooded" class="list-group-item list-group-item-action">Hooded T-Shirts <small class="text-muted">(20)</small></a>
+                                            <a href="#" onclick="" value="VNeck" class="list-group-item list-group-item-action">V Neck T-Shirts <small class="text-muted">(10)</small></a>
+                                            <a href="#" onclick="" value="Hooded" class="list-group-item list-group-item-action">Hooded T-Shirts <small class="text-muted">(20)</small></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="list-group-collapse sub-men">
-                                    <a class="list-group-item list-group-item-action" href="#sub-men2" data-toggle="collapse" aria-expanded="false" aria-controls="sub-men2">Footwear 
-								<small class="text-muted">(50)</small>
-								</a>
+                                    <a class="list-group-item list-group-item-action" href="#sub-men2" data-toggle="collapse" aria-expanded="false" aria-controls="sub-men2">
+                                        Footwear
+                                        <small class="text-muted">(50)</small>
+                                    </a>
                                     <div class="collapse" id="sub-men2" data-parent="#list-group-men">
                                         <div class="list-group">
-                                            <a href="#" onclick=""  value="Sports" class="list-group-item list-group-item-action">Sports Shoes <small class="text-muted">(10)</small></a>
-                                            <a href="#" onclick=""  value="Sneakers" class="list-group-item list-group-item-action">Sneakers <small class="text-muted">(20)</small></a>
-                                            <a href="#" onclick=""  value="FormalShoes" class="list-group-item list-group-item-action">Formal Shoes <small class="text-muted">(20)</small></a>
+                                            <a href="#" onclick="" value="Sports" class="list-group-item list-group-item-action">Sports Shoes <small class="text-muted">(10)</small></a>
+                                            <a href="#" onclick="" value="Sneakers" class="list-group-item list-group-item-action">Sneakers <small class="text-muted">(20)</small></a>
+                                            <a href="#" onclick="" value="FormalShoes" class="list-group-item list-group-item-action">Formal Shoes <small class="text-muted">(20)</small></a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" onclick=""  value="Men" class="list-group-item list-group-item-action"> Men  <small class="text-muted">(150) </small></a>
-                                <a href="#" onclick=""  value="Accessories" class="list-group-item list-group-item-action">Accessories <small class="text-muted">(11)</small></a>
-                                <a href="#" onclick=""  value="Bags" class="list-group-item list-group-item-action">Bags <small class="text-muted">(22)</small></a>
+                                <a href="#" onclick="" value="Men" class="list-group-item list-group-item-action"> Men  <small class="text-muted">(150) </small></a>
+                                <a href="#" onclick="" value="Accessories" class="list-group-item list-group-item-action">Accessories <small class="text-muted">(11)</small></a>
+                                <a href="#" onclick="" value="Bags" class="list-group-item list-group-item-action">Bags <small class="text-muted">(22)</small></a>
                             </div>
                         </div>
                         <div class="filter-price-left">
@@ -332,7 +326,7 @@
                                 <div id="slider-range"></div>
                                 <p>
                                     <input type="text" id="amount" readonly style="border:0; color:#fbb714; font-weight:bold;">
-                                    <button class="btn hvr-hover"  type="submit">Filter</button>
+                                    <button class="btn hvr-hover" type="submit">Filter</button>
                                 </p>
                             </div>
                         </div>
@@ -414,16 +408,16 @@
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
                                     <span>Sort by </span>
-                         <!-- get the selected  value and post to action by ajax-->
-                                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-									<option data-display="Select" value="Nothing">Nothing</option>
-									<option onclick="FilterBar()" value="Popularity">Popularity</option>
-									<option onclick="FilterBar()" value="High">High Price → High Price</option>
-									<option onclick="FilterBar()" value="Low">Low Price → High Price</option>
-									<option onclick="FilterBar()" value="BestSelling">Best Selling</option>
-								</select>
+                                    <!-- get the selected  value and post to action by jquery or ajax-->
+                                    <select id="basic"  class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                                        <option  value="Nothing">Nothing</option>
+                                        <option   value="Popularity">Popularity</option>
+                                        <option value="High">High Price → High Price</option>
+                                        <option  value="Low">Low Price → High Price</option>
+                                        <option  value="BestSelling">Best Selling</option>
+                                    </select>
                                 </div>
-                                <p>Showing all 4 results</p>
+                                <p>Showing all 9 results</p>
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
@@ -438,82 +432,83 @@
                         </div>
 
                         <!-- for product by value of selected list-->
-                        
+
                         <div class="row product-categorie-box">
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                    <div class="row" id="box">
+                                    <div class="row">
                                         <!--for grid-view -->
-                                        @foreach (var item in Model)
-                                    {
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">@item.Stock</p>
-                                                    </div>
-                                                    <img src="~/images/@item.Medias[0].Path"  class="img-fluid" style="height:265px;width:305px" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ProductID" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" asp-controller="Cart" asp-action="AddToCart"  asp-route-id="@Model[0].ProductID">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>@item.Name</h4>
-                                                    <h5> $@item.Price</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                                    </div>
-                                </div>
-                           
-                                   
-                               <div role="tabpanel" class="tab-pane fade" id="list-view">
-                                    <div class="list-view-box">
-                                        <div class="row">
-                                                 <!--for list-view -->
-                                             @foreach (var item in Model)
-                                         {
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+                                        @foreach (var item in Model) 
+                                        {
+                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" >
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
-                                                            <p class="new">@item.Stock</p>
+                                                            <p class="sale">@item.Stock</p>
                                                         </div>
-                                                        <img src="~/images/@item.Medias[0].Path" class="img-fluid"  style="height:294px;width:220px"  alt="Image">
+                                                        <img src="~/images/@item.Medias[0].Path" class="img-fluid" style="height:265px;width:305px" alt="Image">
                                                         <div class="mask-icon">
-                                                           
                                                             <ul>
-                                                                <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ProductID"  data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                                <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ProductID" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                             </ul>
-
+                                                            <a class="cart" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model[0].ProductID">Add to Cart</a>
                                                         </div>
+                                                    </div>
+                                                    <div class="why-text">
+                                                        <h4>@item.Name</h4>
+                                                        <h5> $@item.Price</h5>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
-                                                <div class="why-text full-width">
-                                                    <h4>@item.Name</h4>
-                                                    <h5> <del>$ @item.Price</del> $40.79</h5>
-                                                    <p>@item.Description</p>
-                                                    <a class="btn hvr-hover" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model[0].ProductID" >Add to Cart</a>
-                                                </div>
-                                            </div>
-                                          }
-                                     </div>
-                                       
+                                        }
                                     </div>
-                                    
                                 </div>
-                                   
-                               
+
+
+                                <div role="tabpanel" class="tab-pane fade" id="list-view">
+                                    <div class="list-view-box">
+                                        <div class="row">
+                                            <!--for list-view -->
+                                            @foreach (var item in Model)
+                                            {
+                                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                                    <div class="products-single fix">
+                                                        <div class="box-img-hover">
+                                                            <div class="type-lb">
+                                                                <p class="new">@item.Stock</p>
+                                                            </div>
+                                                            <img src="~/images/@item.Medias[0].Path" class="img-fluid" style="height:294px;width:220px" alt="Image">
+                                                            <div class="mask-icon">
+
+                                                                <ul>
+                                                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ProductID" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                                                    <div class="why-text full-width">
+                                                        <h4>@item.Name</h4>
+                                                        <h5> <del>$ @item.Price</del> $40.79</h5>
+                                                        <p>@item.Description</p>
+                                                        <a class="btn hvr-hover" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model[0].ProductID">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
                             </div>
                         </div>
 
@@ -523,7 +518,6 @@
         </div>
     </div>
     <!-- End Shop Page -->
-
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
@@ -610,8 +604,7 @@
         </div>
     </div>
     <!-- End Instagram Feed  -->
-
-   @* @(Component.InvokeAsync("LastProducts"))*@
+    @* @(Component.InvokeAsync("LastProducts"))*@
     <!-- Start Footer  -->
     <footer>
         <div class="footer-main">
@@ -620,8 +613,9 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>About ThewayShop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
@@ -638,7 +632,7 @@
                             <h4>Information</h4>
                             <ul>
                                 <li><a href="#">About Us</a></li>
-                                <li><a asp-controller="Product" asp-action="Index" > Customer Products Service</a></li>
+                                <li><a asp-controller="Product" asp-action="Index"> Customer Products Service</a></li>
                                 <li><a asp-controller="Categories" asp-action="Index">Our Categories</a></li>
                                 <li><a asp-controller="Media" asp-action="Index">Terms &Media; Conditions</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
@@ -667,21 +661,26 @@
         </div>
     </footer>
     <!-- End Footer  -->
-
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a></p>
+        <p class="footer-company">
+            All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
+            <a href="https://html.design/">html design</a>
+        </p>
     </div>
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-     <!--ajax for search bar: -->
+
+
+
+    <!--ajax for search bar: -->
+
     <script type="text/javascript">
         function FilterBar() {
             var request = new XMLHttpRequest();
-             q=document.getElementById("basic").value;
-            request.open('POST', '@Url.Action("Shop","Home")' + '?q=' +   q );
+            var q = document.getElementById("basic").value;
+            request.open('POST', '@Url.Action("PartialProduct", "Home")' + '?q=' + q);
             request.onreadystatechange = function () {
                 if (request.readyState == 4 & request.status == 200) {
                     document.getElementById("box").innerHTML = request.response;
@@ -692,8 +691,41 @@
 
         }
 
+           @* @(Component.InvokeAsync("LastProducts"))*@
+    </script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#basic").change(function () {
+                var q = $("#basic").val();
+                 $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("Shop", "Home")',
+                    data: { q: q },
+                     success: function (result) {
+                         $("#box").html(result);
+                        alert("you searched for ...");
+                        console.log(result);
+                     /* $("#box").innerHTML = request.response;*/
+                     }
+
+
+                 });
+        });
+    });
 
     </script>
+
+
+    @*<script type="text/javascript">
+
+          q=document.getElementById("basic").value;
+        $(document).ready(function() {
+            $("#partialView").load('@Url.Action()');
+        });
+        </script>*@
 
     <!-- ALL JS FILES -->
     <script src="~/js/jquery-3.2.1.min.js"></script>

@@ -211,7 +211,7 @@
                                        @foreach (var item in (ViewBag.Cart as Cart).CartLines)
                                     {
                                     <div class="media mb-2 border-bottom">
-                                        <div class="media-body"> <a asp-controller="Home" asp-action="Detail" > Lorem ipsum dolor sit amet</a>
+                                        <div class="media-body"> <a asp-controller="Home" asp-action="Detail" >@item.Product.Name</a>
                                             <div class="small text-muted">Price: $@item.Product.Price <span class="mx-2">|</span>  Qty: @item.Quantity <span class="mx-2">|</span> Subtotal: $@(@item.Quantity * @item.Product.Price)</div>
                                         </div>
                                     </div>

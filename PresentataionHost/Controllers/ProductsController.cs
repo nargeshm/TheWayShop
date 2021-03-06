@@ -49,7 +49,7 @@ namespace PresentataionHost.Controllers
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryName");
-            //ViewData["Stock"]=new SelectList(_context.Products, "Stock", "Status");
+            ViewData["Stock"] = new SelectList(_context.Products, "Stock", "Status");
             return View();
         }
 
@@ -92,7 +92,7 @@ namespace PresentataionHost.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID,Name,Description,Price,CategoryId,Stock,Likes,InseretTime")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID,Name,Description,Price,CategoryId,Stock,Likes,Qty,SellerCount,InseretTime")] Product product)
         {
             if (id != product.ProductID)
             {

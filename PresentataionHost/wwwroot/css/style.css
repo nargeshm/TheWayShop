@@ -1569,11 +1569,29 @@ ul.cart-list > li.total > .btn:hover {
             }
 /*------------------------------------------------------------------ All Pages -------------------------------------------------------------------*/
 .all-title-box {
-    background: url("../images/all-bg-title.jpg") no-repeat center center;
+    background: url("../images/Banner-04.jpg") no-repeat center center;
 /*    -webkit-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;
     -o-background-size: cover;*/
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 70px 0px;
+    position: relative;
+}
+
+.all-title-box2 {
+    background: url("../images/banner-06.jpg") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 70px 0px;
+    position: relative;
+}
+
+.all-title-box3 {
+    background: url("../images/all-bg-title.jpg") no-repeat center center;
     background-size: cover;
     text-align: center;
     background-attachment: fixed;
@@ -1620,6 +1638,93 @@ ul.cart-list > li.total > .btn:hover {
     .all-title-box .breadcrumb-item + .breadcrumb-item::before {
         color: #010101;
     }
+
+/*--------------------------------------heloo 2------------------------------*/
+
+
+.all-title-box2::before {
+    background: rgba(0,0,0,0.6);
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.all-title-box2 h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    padding-bottom: 30px;
+}
+
+.all-title-box2 .breadcrumb {
+    background: #d33b33;
+    margin: 0px;
+    display: inline-block;
+    border-radius: 0px;
+}
+
+    .all-title-box2 .breadcrumb li {
+        display: inline-block;
+        color: #010101;
+        font-size: 16px;
+    }
+
+        .all-title-box2 .breadcrumb li a {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+.all-title-box2 .breadcrumb-item + .breadcrumb-item::before {
+    color: #010101;
+}
+/*end 2*/
+
+/*--------------------------------------heloo 3------------------------------*/
+.all-title-box3::before {
+    background: rgba(0,0,0,0.6);
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.all-title-box3 h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    padding-bottom: 30px;
+}
+
+.all-title-box3 .breadcrumb {
+    background: #d33b33;
+    margin: 0px;
+    display: inline-block;
+    border-radius: 0px;
+}
+
+    .all-title-box3 .breadcrumb li {
+        display: inline-block;
+        color: #010101;
+        font-size: 16px;
+    }
+
+        .all-title-box3 .breadcrumb li a {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+.all-title-box3 .breadcrumb-item + .breadcrumb-item::before {
+    color: #010101;
+}
+
+/*end 2*/
 
 .about-box-main {
     padding: 70px 0px;

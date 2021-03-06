@@ -1,14 +1,10 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using PresentataionHost.Models;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using WS.Core.Contracts.Service;
 using WS.Core.Entites;
 using WS.Infrastruture.Sql;
@@ -28,115 +24,76 @@ namespace PresentataionHost.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            ViewBag.best = ProductService.GetBestSellerProduct().Take(4).ToList();
+            ViewBag.top = ProductService.GetPopularProduct().Take(4).ToList();
+            return View(ProductService.GetNewestProduct().Take(4).ToList());
         }
-        [HttpPost]
-        public IActionResult Index(string q)
-        {
-            List<Product> result = new List<Product>();
-            ViewBag.q = q;
-            if (q=="")
-            {
-                
-            }
-            else if (q=="")
-            {
-
-            }
-            else
-            {
-                    
-            }
-
-            return View(result);
-        }
+       
 
         public IActionResult Privacy()
         {
             return View();
         }
-        //go to list of product
+
         public IActionResult Shop()
         {
-            
+
             return View(ProductService.GetNewestProduct().Take(9).ToList());
         }
         //see this page:  
-    // https://www.aspsnippets.com/Articles/MVC-Partial-View-String-Render-Return-Partial-View-as-String-from-Controller-in-ASPNet-MVC.aspx
-         
+        // https://www.aspsnippets.com/Articles/MVC-Partial-View-String-Render-Return-Partial-View-as-String-from-Controller-in-ASPNet-MVC.aspx
+
         //for filter product in shop page:
         [HttpPost]
-        public ContentResult Shop(string q)
+        public IActionResult Shop(string q)
         {
             List<Product> result = new List<Product>();
             if (q == "BestSelling")
             {
-                result = ProductService.GetBestSellerProduct().ToList();
+                result = ProductService.GetBestSellerProduct().Take(9).ToList();
             }
             else if (q == "Popularity")
             {
-                result = ProductService.GetPopularProduct().ToList();
+                result = ProductService.GetPopularProduct().Take(9).ToList();
             }
             else if (q == "Low")
             {
-                result = ProductService.GetChippestProduct().ToList();
+                result = ProductService.GetChippestProduct().Take(9).ToList();
             }
             else if (q == "High")
             {
-                result = ProductService.GetHighPriceProduct().ToList();
+                result = ProductService.GetHighPriceProduct().Take(9).ToList();
             }
 
             else
             {
-                result = ProductService.GetNewestProduct().ToList();
+                result = ProductService.GetNewestProduct().Take(9).ToList();
             }
-            string format = "";
-            foreach (var item in result)
-            {
-                string images = $"/images/{ item.Medias[0].Path as string}";
-                string src = $"/Home/Detail/?id={item.ProductID}";
 
-                format += $" <div class={"col - sm - 6 col - md - 6 col - lg - 4 col - xl - 4"}>" +
-                      $"< div class={"products-single fix"}>" +
-                      $"<div class={"box-img-hover"}>" +
-                      $"<div class={"type-lb"}>< p class={"sale"}>Sale</p></div>" +
-                      $"< img src = { images} class={"img-fluid"} alt={"Image"}>" +
-                      $"<div class={"mask-icon"}>" +
-                      $"<ul><li><a href = {src} data-toggle={"tooltip"} " +
-                      $"data-placement={"right"} title={"View"}>" +
-                      $"<i class={"fas fa-eye"}></i></a></li>" +
-                      $"< li >< a href = {"#"} data-toggle={ "tooltip"} data-placement={"right"} title={"Compare"}>" +
-                      $"<i class={"fas fa-sync-alt"}></i></a></li><li>" +
-                      $"<a href = {"#"} data-toggle={"tooltip"} data-placement={"right"} title={"Add to Wishlist"}><i class={"far fa-heart"}>" +
-                      $"</i></a></li></ul><a class={"cart"} href={"#"}>Add to Cart</a></div></div>" +
-                      $"<div class={"why-text"}><h4>{item.Description}</h4><h5> ${item.Price}</h5></div></div></div>";
-
-
-            }
-            //ViewBag.data = $"@(Component.Invoke({"LastProducts"}))";
-            return Content(format);
+            ////ViewBag.data = $"@(Component.Invoke({"LastProducts"}))";
+            return View(result);
         }
- //see this!!!https://www.c-sharpcorner.com/article/different-ways-of-render-partial-view-in-mvc/
-        
-            //show detail of Product:
-            public IActionResult Detail(int id)
-             {
-               return View(ProductService.Get(id));  
-            
-              }
+        //see this!!!https://www.c-sharpcorner.com/article/different-ways-of-render-partial-view-in-mvc/
+
+        //show detail of Product:
+        public IActionResult Detail(int id)
+        {
+            ViewBag.top = ProductService.GetPopularProduct().Take(12).ToList();
+            return View(ProductService.Get(id));
+
+        }
 
 
         /* return  Product by category */
         public IActionResult Product(string Category)
         {
             ViewBag.name = Category;
-
             var CategoryN = ctx.Categories.Single(a => a.CategoryName == Category);
             var ProductContext = ctx.Entry(CategoryN).Collection(b => b.Products)
                 .Query().Include(b => b.Medias);
-
             return View(ProductContext.ToList());
         }
+
         //for search news:
         public IActionResult Search()
         {

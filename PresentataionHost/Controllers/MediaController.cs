@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 using WS.Core.Entites;
 using WS.Infrastruture.Sql;
 
@@ -22,28 +20,39 @@ namespace PresentataionHost.Controllers
         // GET: Media
         public async Task<IActionResult> Index()
         {
-            var demoContext = _context.Medias.Include(m => m.Product);
+            var demoContext = _context.Products.Include(m => m.Medias);
             return View(await demoContext.ToListAsync());
         }
 
         // GET: Media/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var Product = _context.Medias.Single(b => b.MediaId == 1);
 
-            var media = await _context.Medias
-                .Include(m => m.Product)
-                .FirstOrDefaultAsync(m => m.MediaId == id);
-            if (media == null)
-            {
-                return NotFound();
-            }
+        //    _context.Entry(Product).Collection(b => b.Posts)
+        //       .Query().ToList();
 
-            return View(media);
-        }
+        //    var media = await _context.Medias
+        //        .FirstOrDefaultAsync(m => m.MediaId == id);
+
+        //    var Products = _context.Products.Include(a => a.Medias).ToList();
+        //    var t = _context.Entry(Products)
+        //     .Collection(media)
+        //    .Query()
+        //    .Where(sc => sc.CourseName == "Maths")
+        //    .FirstOrDefault();
+
+        //    if (media == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(media);
+        //}
 
         // GET: Media/Create
         public IActionResult Create()
@@ -65,7 +74,8 @@ namespace PresentataionHost.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductID", "Name", media.ProductId);
+      
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductID", "Name");
             return View(media);
         }
 
@@ -82,7 +92,8 @@ namespace PresentataionHost.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductID", "Name", media.ProductId);
+
+            //ViewData["ProductId"] = new SelectList(_context.Products, "ProductID", "Name", media.ProductId);
             return View(media);
         }
 
@@ -118,28 +129,28 @@ namespace PresentataionHost.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductID", "Name", media.ProductId);
+            //ViewData["ProductId"] = new SelectList(_context.Products, "ProductID", "Name", media.ProductId);
             return View(media);
         }
 
         // GET: Media/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var media = await _context.Medias
-                .Include(m => m.Product)
-                .FirstOrDefaultAsync(m => m.MediaId == id);
-            if (media == null)
-            {
-                return NotFound();
-            }
+        //    var media = await _context.Medias
+        //        .Include(m => m.Product)
+        //        .FirstOrDefaultAsync(m => m.MediaId == id);
+        //    if (media == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(media);
-        }
+        //    return View(media);
+        //}
 
         // POST: Media/Delete/5
         [HttpPost, ActionName("Delete")]

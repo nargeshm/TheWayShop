@@ -31,6 +31,12 @@
                 @Html.DisplayNameFor(model => model.Stock)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SellerCount)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Likes)
             </th>
             <th>
@@ -52,13 +58,19 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-             $ @Html.DisplayFor(modelItem => item.Price)
+                $ @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellerCount)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Likes)

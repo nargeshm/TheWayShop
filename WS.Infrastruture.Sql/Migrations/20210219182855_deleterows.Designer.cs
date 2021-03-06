@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WS.Infrastruture.Sql;
 
 namespace WS.Infrastruture.Sql.Migrations
 {
     [DbContext(typeof(DemoContext))]
-    partial class DemoContextModelSnapshot : ModelSnapshot
+    [Migration("20210219182855_deleterows")]
+    partial class deleterows
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,12 +81,12 @@ namespace WS.Infrastruture.Sql.Migrations
                     b.Property<string>("Path")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProductID")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("MediaId");
 
-                    b.HasIndex("ProductID");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Medias");
                 });
@@ -175,9 +177,6 @@ namespace WS.Infrastruture.Sql.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int>("Qty")
-                        .HasColumnType("int");
-
                     b.Property<int>("SellerCount")
                         .HasColumnType("int");
 
@@ -215,9 +214,11 @@ namespace WS.Infrastruture.Sql.Migrations
 
             modelBuilder.Entity("WS.Core.Entites.Media", b =>
                 {
-                    b.HasOne("WS.Core.Entites.Product", null)
+                    b.HasOne("WS.Core.Entites.Product", "Product")
                         .WithMany("Medias")
-                        .HasForeignKey("ProductID");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WS.Core.Entites.Product", b =>

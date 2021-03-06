@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using WS.Core.Contracts.Repository;
 using WS.Core.Entites;
 using WS.Infrastruture.Sql;
@@ -27,11 +25,13 @@ namespace WS.Infrastruture.Data
         public List<Product> GetChippestProduct()
         {
             List<Product> result = new List<Product>();
-            foreach (var category in context.Categories.ToList())
+            foreach (var category in context.Categories.Include(a => a.Products).ToList())
             {
-                int minPrice = context.Products.Include(a => a.Category).Where(a => a.Category == category).Min(a => a.Price);
-                result.Add(context.Products.Include(a => a.Medias).First(a => a.Price == minPrice));
-
+                if (category.Products.Count != 0)
+                {
+                    int minPrice = context.Products.Include(a => a.Category).Where(a => a.Category == category).Min(a => a.Price);
+                    result.Add(context.Products.Include(a => a.Medias).First(a => a.Price == minPrice));
+                }
             }
             return result;
         }
@@ -70,10 +70,14 @@ namespace WS.Infrastruture.Data
         public List<Product> GetHighPriceProduct()
         {
             List<Product> result = new List<Product>();
-            foreach (var category in context.Categories.ToList())
+            foreach (var category in context.Categories.Include(a=>a.Products).ToList())
             {
-                int MaxPrice = context.Products.Include(a => a.Category).Where(a => a.Category == category).Max(a => a.Price);
-                result.Add(context.Products.Include(a => a.Medias).First(a => a.Price == MaxPrice));
+                var cty = category.Products.Count;
+                    if (category.Products.Count !=0)
+                    {
+                    var MaxPrice = context.Products.Include(a => a.Category).Where(a => a.Category == category).Max(a => a.Price);
+                    result.Add(context.Products.Include(a => a.Medias).First(a => a.Price == MaxPrice));
+                     }
 
             }
             return result;

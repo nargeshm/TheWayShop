@@ -23,7 +23,7 @@ namespace PresentataionHost.Controllers
             return View(cart);
         }
 
-        public IActionResult AddToCart(int productId, int qunaity,string size)
+        public IActionResult AddToCart(int productId, int qunaity=1,string size="xl")
         {
             string referer = Request.Headers["Referer"].ToString();
             Product product = prodctService.Get(productId);

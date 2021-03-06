@@ -181,15 +181,15 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="shop-detail.html">Shop Detail</a></li>
+                                <li><a asp-controller="Cart" asp-action="Index">Cart</a></li>
+                                <li><a asp-controller="Checkout" asp-action="Index">Checkout</a></li>
+                                <li><a asp-controller="MyAccount" asp-action="Index">My Account</a></li>
+                                <li><a asp-controller="Home" asp-action="Wishlist">Wishlist</a></li>
+                    
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Service">Our Service</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="ContactUs">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -259,9 +259,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <h1 class="m-b-20"><strong>به<br> wayshop<br> خوش آمدید</strong></h1>
+                            <p class="m-b-40">تجربه یک خرید واقعی را با ما تجربه کنید <br> کیفیت و اصلالت را با فروشگاه ما به دست بیاورید </p>
+                            <p><a class="btn hvr-hover"  asp-controller="Home" asp-action="Shop">همین الان خرید کنید</a></p>
                         </div>
                     </div>
                 </div>
@@ -271,9 +271,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <h1 class="m-b-20"><strong>به <br> wayshop<br> خوش آمد</strong></h1>
+                            <p class="m-b-40">تجربه یک خرید واقعی را با ما تجربه کنید  <br> کیفیت و اصلالت را با فروشگاه ما به دست بیاورید</p>
+                            <p><a class="btn hvr-hover"  asp-controller="Home" asp-action="Shop">همین الان خرید کنید</a></p>
                         </div>
                     </div>
                 </div>
@@ -283,9 +283,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <h1 class="m-b-20"><strong>Welcome To <br> wayshop<br> خوش آمد</strong></h1>
+                            <p class="m-b-40">تجربه یک خرید واقعی را با ما تجربه کنید<br> کیفیت و اصلالت را با فروشگاه ما به دست بیاورید</p>
+                            <p><a class="btn hvr-hover"  asp-controller="Home" asp-action="Shop">همین الان خرید کنید</a></p>
                         </div>
                     </div>
                 </div>
@@ -303,31 +303,31 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="~/images/t-shirts-img.jpg" alt="" />
+                        <img style="height:352px;width:352px" class="img-fluid" src="~/images/t-shirt2-img.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">T-shirts</a>
                     </div>
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="~/images/shirt-img.jpg" alt="" />
+                        <img style="height:352px;width:352px" class="img-fluid" src="~/images/2020Girl.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Shirt</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="~/images/wallet-img.jpg" alt="" />
+                        <img style="height:352px;width:352px" class="img-fluid" src="~/images/bestWallet.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Wallet</a>
                     </div>
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="~/images/women-bag-img.jpg" alt="" />
+                        <img style="height:352px;width:352px" class="img-fluid" src="~/images/1bag.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Bags</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="~/images/shoes-img.jpg" alt="" />
+                        <img style="height:352px;width:352px" class="img-fluid" src="~/images/vansShoes.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Shoes</a>
                     </div>
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="~/images/women-shoes-img.jpg" alt="" />
+                        <img style="height:352px;width:352px" class="img-fluid" src="~/images/yellowShoes.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Women Shoes</a>
                     </div>
                 </div>
@@ -342,7 +342,7 @@
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Featured Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                        <p>برترین محصولات با بالا ترین کیفیت را از فروشگاه ما تهیه کنید</p>
                     </div>
                 </div>
             </div>
@@ -353,107 +353,191 @@
                             <button onclick="" class="active" data-filter="*">All</button>
                             <button onclick="" data-filter=".top-featured">Top featured</button>
                             <button onclick="" data-filter=".best-seller">Best seller</button>
+                            <button onclick="" data-filter=".Newest">Newest</button>
+
                         </div>
                     </div>
                 </div>
             </div>
-
+            
             <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
+
+                <!-- 1-0 -->
+                <div class="col-lg-3 col-md-6 special-grid Newest">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="~/images/blackwatch.jpg" class="img-fluid" alt="Image">
+                            <img src="~/images/@Model[0].Medias[0].Path" style="height:330px" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    @* asp-route-id="@Model[0].ProductID"*@
-                                    <li><a asp-controller="Home" asp-action="Deatail"  data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+
+                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@Model[0].ProductID" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" asp-controller="Home" asp-action="AddToCart" asp-route-Finde="" >Add to Cart</a>
+                                <a class="cart" asp-controller="Cart" asp-action="Index" asp-route-productId="@Model[0].ProductID">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $7.79</h5>
+                            <h4>@Model[0].Name</h4>
+                            <h5> $@Model[0].Price .65</h5>
                         </div>
                     </div>
                 </div>
-                @*@if(){
-                    
-                }*@
+                <!-- 1-0 end -->
+                <!-- 1 -->
+                <div class="col-lg-3 col-md-6 special-grid Newest">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="~/images/@Model[2].Medias[0].Path" style="height:330px" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+
+                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@Model[2].ProductID" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" asp-controller="Cart" asp-action="Index" asp-route-productId="@Model[2].ProductID">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>@Model[2].Name</h4>
+                            <h5> $@Model[2].Price .65</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 end -->
+                <!-- 1-1 -->
+                <div class="col-lg-3 col-md-6 special-grid Newest">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="~/images/@Model[1].Medias[0].Path" style="height:330px" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+
+                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@Model[1].ProductID" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" asp-controller="Cart" asp-action="index" asp-route-productId="@Model[1].ProductID">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>@Model[1].Name</h4>
+                            <h5> $@Model[1].Price .65</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1-1 end -->
+                <!-- 2 -->
+
                 <div class="col-lg-3 col-md-6 special-grid top-featured">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                                 <p class="new">New</p>
                             </div>
-                            <img src="~/images/t-shirt2-img.jpg" style="height:330px" class="img-fluid" alt="Image">
+                            <img src="~/images/@((ViewBag.top[0] as Product).Medias[0].Path) " style="height:330px" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@((ViewBag.top[0] as Product).ProductID)" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a class="cart" asp-controller="Cart" asp-action="index" asp-route-productId="@((ViewBag.top[0] as Product).ProductID)">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $9.79</h5>
+                            <h4>@((ViewBag.top[0] as Product).Name)</h4>
+                            <h5> $@((ViewBag.top[0] as Product).Price)</h5>
                         </div>
                     </div>
                 </div>
-
+                <!-- 3 -->
                 <div class="col-lg-3 col-md-6 special-grid top-featured">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="~/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                            <img src="~/images/@((ViewBag.top[1] as Product).Medias[0].Path) " style="height:330px;width:255px" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@((ViewBag.top[1] as Product).ProductID)" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a class="cart" asp-controller="Cart" asp-action="index" asp-route-productId="@((ViewBag.top[1] as Product).ProductID)">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $10.79</h5>
+                            <h4>@((ViewBag.top[1] as Product).Name)</h4>
+                            <h5> $@((ViewBag.top[1] as Product).Price)</h5>
                         </div>
                     </div>
                 </div>
-
+                <!-- 4 -->
                 <div class="col-lg-3 col-md-6 special-grid best-seller">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="~/images/img-pro-04.jpg" class="img-fluid" alt="Image">
+                            <img src="~/images/@((ViewBag.best[0] as Product).Medias[0].Path)" style="height:330px" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@((ViewBag.best[0] as Product).ProductID)" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a class="cart" asp-controller="Cart" asp-action="index" asp-route-productId="@((ViewBag.best[0] as Product).ProductID)">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $15.79</h5>
+                            <h4>@((ViewBag.best[0] as Product).Name)</h4>
+                            <h5> $@((ViewBag.best[0] as Product).Price)</h5>
                         </div>
                     </div>
                 </div>
+                <!-- 4 end -->
+                <!-- 4 -->
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="~/images/@((ViewBag.best[1] as Product).Medias[0].Path)" style="height:330px" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a asp-controller="Home" asp-action="Detail" asp-route-id="@((ViewBag.best[1] as Product).ProductID)" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" asp-controller="Cart" asp-action="index" asp-route-productId="@((ViewBag.best[1] as Product).ProductID)">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>@((ViewBag.best[1] as Product).Name)</h4>
+                            <h5> $@((ViewBag.best[1] as Product).Price)</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4 end -->
+
             </div>
+
+
+
+
         </div>
     </div>
     <!-- End Products  -->
