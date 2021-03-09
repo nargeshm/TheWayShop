@@ -7,11 +7,11 @@ namespace WS.Infrastruture.Sql
 {
     public class DemoContext : DbContext
     {
-        public DemoContext(DbContextOptions options) : base(options)
+        public DemoContext(DbContextOptions <DemoContext> options) : base(options)
         {
 
         }
-
+     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProductConfig());

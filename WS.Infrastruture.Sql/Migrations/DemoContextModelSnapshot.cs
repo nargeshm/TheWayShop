@@ -79,12 +79,12 @@ namespace WS.Infrastruture.Sql.Migrations
                     b.Property<string>("Path")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProductID")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("MediaId");
 
-                    b.HasIndex("ProductID");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Medias");
                 });
@@ -217,7 +217,9 @@ namespace WS.Infrastruture.Sql.Migrations
                 {
                     b.HasOne("WS.Core.Entites.Product", null)
                         .WithMany("Medias")
-                        .HasForeignKey("ProductID");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WS.Core.Entites.Product", b =>

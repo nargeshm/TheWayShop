@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce </title>>
+    <title>ThewayShop - Ecommerce </title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -32,7 +32,6 @@
 
 
 <body>
-
     <!-- Start Main Top -->
     <div class="main-top">
         <div class="container-fluid">
@@ -108,7 +107,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" asp-action="Index" asp-controller="Home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
@@ -116,7 +115,7 @@
                                 <li>
                                     <div class="row">
                                         <div class="col-menu col-md-3">
-                                            <h6 class="title">Top</h6>
+                                            <h6 class="title"><a asp-controller="Home" asp-action="Product" asp-route-Category="Top">Top</a></h6>
                                             <div class="content">
                                                 <ul class="menu-col">
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Jackets">Jackets</a></li>
@@ -128,7 +127,7 @@
                                         </div>
                                         <!-- end col-3 -->
                                         <div class="col-menu col-md-3">
-                                            <h6 class="title">Bottom</h6>
+                                            <h6 class="title"><a asp-controller="Home" asp-action="Product" asp-route-Category="Bottom">Bottom</a></h6>
                                             <div class="content">
                                                 <ul class="menu-col">
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Swimwear">Swimwear</a></li>
@@ -140,7 +139,7 @@
                                         </div>
                                         <!-- end col-3 -->
                                         <div class="col-menu col-md-3">
-                                            <h6 class="title">Clothing</h6>
+                                            <h6 class="title"><a asp-controller="Home" asp-action="Product" asp-route-Category="Clothing">Clothing</a></h6>
                                             <div class="content">
                                                 <ul class="menu-col">
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Top Wear">Top Wear</a></li>
@@ -151,7 +150,7 @@
                                             </div>
                                         </div>
                                         <div class="col-menu col-md-3">
-                                            <h6 class="title">Accessories</h6>
+                                            <h6 class="title"><a asp-controller="Home" asp-action="Product" asp-route-Category="Accessories">Accessories</a></h6>
                                             <div class="content">
                                                 <ul class="menu-col">
                                                     <li><a asp-controller="Home" asp-action="Product" asp-route-Category="Bags">Bags</a></li>

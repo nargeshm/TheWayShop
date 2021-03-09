@@ -33,7 +33,7 @@ namespace PresentataionHost.Controllers
             }
             return Redirect(referer);
         }
-        [HttpPost]
+       
         public IActionResult RemoveLine(int ProductId)
         {
            

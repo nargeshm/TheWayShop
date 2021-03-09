@@ -26,7 +26,7 @@ namespace WS.Infrastruture.Data
         {
             List<Product> result = new List<Product>();
             foreach (var category in context.Categories.Include(a => a.Products).ToList())
-            {
+            {  
                 if (category.Products.Count != 0)
                 {
                     int minPrice = context.Products.Include(a => a.Category).Where(a => a.Category == category).Min(a => a.Price);

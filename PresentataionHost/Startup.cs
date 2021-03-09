@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,6 +38,12 @@ namespace PresentataionHost
             {
                 option.UseSqlServer(Configuration.GetConnectionString("TheWayShop"));
             });
+            /* identity:*/
+            services.AddDbContext<IdentityContext>(option => option.UseSqlServer(Configuration.GetConnectionString("IdentityCS")));
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
+
+            /* identity:*/
             services.AddTransient<IPayment, PayIr>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProdctService, ProductService>();
@@ -68,7 +75,8 @@ namespace PresentataionHost
             app.UseSession();
             app.UseCookiePolicy();
             app.UseAuthorization();
-
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

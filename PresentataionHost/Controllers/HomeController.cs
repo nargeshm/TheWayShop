@@ -24,11 +24,11 @@ namespace PresentataionHost.Controllers
         }
         public IActionResult Index()
         {
-            ViewBag.best = ProductService.GetBestSellerProduct().Take(4).ToList();
+            ViewBag.best = ProductService.GetBestSellerProduct().Take(6).ToList();
             ViewBag.top = ProductService.GetPopularProduct().Take(4).ToList();
             return View(ProductService.GetNewestProduct().Take(4).ToList());
         }
-       
+
 
         public IActionResult Privacy()
         {
@@ -78,7 +78,7 @@ namespace PresentataionHost.Controllers
         //show detail of Product:
         public IActionResult Detail(int id)
         {
-            ViewBag.top = ProductService.GetPopularProduct().Take(12).ToList();
+            ViewBag.top = ProductService.GetPopularProduct().Take(20).ToList();
             return View(ProductService.Get(id));
 
         }
@@ -87,10 +87,18 @@ namespace PresentataionHost.Controllers
         /* return  Product by category */
         public IActionResult Product(string Category)
         {
+            /* add the comment code in the next time: */
+
+            //List<Product> result = new List<Product>();
             ViewBag.name = Category;
             var CategoryN = ctx.Categories.Single(a => a.CategoryName == Category);
             var ProductContext = ctx.Entry(CategoryN).Collection(b => b.Products)
                 .Query().Include(b => b.Medias);
+            //foreach (var item in ctx.Categories.Include(a => a.Products).ToList())
+            //{
+            //    ctx.Products.Include(a => a.Category).Where(a => a.ParentCategory.CategoryName == Category);
+            //    result.Add() ;
+            //} 
             return View(ProductContext.ToList());
         }
 
