@@ -71,7 +71,7 @@ namespace PresentataionHost.Controllers
                 if (result.Succeeded)
                 {
                     var r = userManager.AddToRoleAsync(appUser, "Guest").Result;
-                    return RedirectToAction("index");
+                    return RedirectToAction("MyAccount", "Account");
                 }
 
                 foreach (var item in result.Errors)
@@ -82,7 +82,10 @@ namespace PresentataionHost.Controllers
             return View(model);
         }
 
-
+        public IActionResult MyAccount()
+        {
+            return View();
+        }
         public async Task<IActionResult> SignOut()
         {
             await signInManager.SignOutAsync();

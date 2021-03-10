@@ -81,9 +81,19 @@
                     </div>
                     <div class="our-link">
                         <ul>
+         
+                            @*class='fas fa-sign-out-alt'*@
                             <li><a asp-controller="Home" asp-action="Shop">🛒 Shop</a></li>
-                            <li><a href="#">Our location</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a asp-controller="Account" asp-action="Signout" class='fas fa-sign-in-alt'> Signout</a></li>
+                                <li><a asp-controller="Account" asp-action="MyAccount" class='fas fa-user-alt'> @User.Identity.Name</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-controller="Account" asp-action="Login" class='fas fa-sign-in-alt'> Login</a></li>
+                                <li><a asp-controller="Account" asp-action="Signup" class='fas fa-user-alt'> Register</a></li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -171,7 +181,7 @@
                             <ul class="dropdown-menu">
                                 <li><a asp-action="Index" asp-controller="Cart">Cart</a></li>
                                 <li><a asp-action="Index" asp-controller="Checkout">Checkout</a></li>
-                                <li><a asp-controller="MyAccount" asp-action="Index">My Account</a></li>
+                                <li><a asp-controller="Account" asp-action="MyAccount">My Account</a></li>
                                 <li><a asp-controller="Home" asp-action="Wishlist">Wishlist</a></li>
                             
                             </ul>
