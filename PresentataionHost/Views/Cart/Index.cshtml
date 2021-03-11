@@ -3,6 +3,21 @@
     ViewData["Title"] = "Index";
 }
 
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Cart</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-action="Shop" asp-controller="Home">Shop</a></li>
+                    <li class="breadcrumb-item active">Cart</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
 
 <!-- Start Cart  -->
 <div class="cart-box-main">
@@ -25,40 +40,40 @@
                         <tbody>
                             @foreach (var item in Model.CartLines)
                             {
-                           
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="~/images/@item.Product.Medias[0].Path" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        @item.Product.Name
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>$ @item.Product.Price .0</p>
-                                </td>
 
-                                <!-- Add ajax function "AddQty()"  -->
-                                <td class="quantity-box"><input oninput="AddQty()" type="number" size="4" value="@item.Quantity" min="0" step="1" class="c-input-text qty text"></td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        @item.Size
-                                    </a>
-                                </td>
-                                <td class="total-pr">
-                                    <p id="Total">$ @(@item.Quantity * @item.Product.Price) .0</p>
-                                </td>
-
-                                <td class="remove-pr">
-                                      <a asp-action="RemoveLine" asp-controller="Cart" asp-route-ProductId="@item.Product.ProductID">
-                                          <i class="fas fa-times"></i> 
+                                <tr>
+                                    <td class="thumbnail-img">
+                                        <a href="#">
+                                            <img class="img-fluid" src="~/images/@item.Product.Medias[0].Path" alt="" />
                                         </a>
-                                
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td class="name-pr">
+                                        <a href="#">
+                                            @item.Product.Name
+                                        </a>
+                                    </td>
+                                    <td class="price-pr">
+                                        <p>$ @item.Product.Price .0</p>
+                                    </td>
+
+                                    <!-- Add ajax function "AddQty()"  -->
+                                    <td class="quantity-box"><input oninput="AddQty()" type="number" size="4" value="@item.Quantity" min="0" step="1" class="c-input-text qty text"></td>
+                                    <td class="name-pr">
+                                        <a href="#">
+                                            @item.Size
+                                        </a>
+                                    </td>
+                                    <td class="total-pr">
+                                        <p id="Total">$ @(@item.Quantity * @item.Product.Price) .0</p>
+                                    </td>
+
+                                    <td class="remove-pr">
+                                        <a asp-action="RemoveLine" asp-controller="Cart" asp-route-ProductId="@item.Product.ProductID">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>

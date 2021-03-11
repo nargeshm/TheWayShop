@@ -60,6 +60,7 @@ namespace PresentataionHost.Controllers
 
                 if (result.Succeeded)
                 {
+         
                     var r = userManager.AddToRoleAsync(appUser, "Guest").Result;
                     return RedirectToAction("index");
                 }
@@ -107,6 +108,7 @@ namespace PresentataionHost.Controllers
 
         public IActionResult Delete(string username)
         {
+            
             AppUser user = userManager.FindByNameAsync(username).Result;
             if (user != null)
             {

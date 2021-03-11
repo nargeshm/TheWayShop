@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using WS.Core.Contracts.Service;
 using WS.Core.Entites;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace PresentataionHost.Controllers
 {
@@ -12,14 +15,22 @@ namespace PresentataionHost.Controllers
     {
         private readonly Cart cart;
         private readonly IOrderService orderService;
-
-        public CheckoutController(Cart cart, IOrderService orderService)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        // omitted for clarity
+      
+        public CheckoutController(Cart cart, IOrderService orderService, IHttpContextAccessor httpContextAccessor)
         {
             this.cart = cart;
             this.orderService = orderService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.id= _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            }
             ViewBag.cart = cart;
             return View(new Order());
         }
