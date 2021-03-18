@@ -1,0 +1,68 @@
+﻿@model PaymentResponseViewModel
+
+@{
+    ViewData["Title"] = "Verify";
+}
+<head>
+    <meta charset="UTF-8">
+    <title>Info payment</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css-success/style.css">
+</head>
+
+<section class="main-content">
+    <div class="container">
+        <h1 class="text-center text-uppercase"> payment Info</h1>
+        <br>
+        <br>
+        <div class="row">
+            @if (Model.status == 1)
+            {
+                <div class="col-sm-6 col-md-4" style="margin-left:400px">
+                    <div class="info-card info-card--success">
+                        <div class="info-card_icon">
+                            <img class="info-card_img-icon" src="~/images/success.svg" alt="success">
+                        </div>
+                        <h2 class="info-card_label">@ViewBag.result</h2>
+                        <div class="info-card_message">شماره پیگیری</div>
+                        <button class="btn btn-primary">@ViewBag.transId</button>
+                    </div>
+                </div>
+            }
+
+            @*<div class="col-sm-6 col-md-4"  style="margin-left:400px">
+            <div class="info-card info-card--warning">
+                <div class="info-card_icon">
+                    <img class="info-card_img-icon" src="~/images/warning.svg" alt="warning">
+                </div>
+                <h2 class="info-card_label">Incomplete</h2>
+                <div class="info-card_message">Here something is successful. Add the description to explain the card.</div>
+                <button class="btn btn-primary">Redo the Task</button>
+            </div>
+        </div>*@
+            @if (Model.status != 1)
+            {
+                <div class="col-sm-6 col-md-4" style="margin-left:400px">
+                    <div class="info-card info-card--danger">
+                        <div class="info-card_icon">
+                            <img class="info-card_img-icon" src="~/images/danger.svg" alt="danger">
+                        </div>
+                        <h2 class="info-card_label">@ViewBag.result</h2>
+                        <div class="info-card_message">شماره پیگیری</div>
+                        <button class="btn btn-primary">@ViewBag.transId</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+

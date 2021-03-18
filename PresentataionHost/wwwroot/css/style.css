@@ -663,7 +663,7 @@ nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover {
 }
 
 .dropdown-toggle::after {
-    display: none;
+    display:none;
 }
 
 nav.navbar.bootsnav ul.navbar-nav li.dropdown ul.dropdown-menu li a {

@@ -21,7 +21,7 @@ namespace PresentataionHost.PaymentSystems
             post_values.Add("api", "test");
             post_values.Add("amount", price.ToString());
 
-            post_values.Add("redirect", "http://localhost:2367/payment/verify");
+            post_values.Add("redirect", "http://localhost:60504/payment/verify");
 
             foreach (KeyValuePair<string, string> post_value in post_values)
             {
