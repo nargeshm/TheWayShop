@@ -124,7 +124,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item"><a class="nav-link" href="~/Home/Index"> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Home"> Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="~/Home/AboutUs">About Us</a></li>
                         <li class="dropdown active megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
@@ -133,9 +133,9 @@
                                     <div class="row">
                                         <!-- add a foreach to show categories-->
                                         @* @foreach (var item in Model)
-                                            {
+                                    {
 
-                                            }*@
+                                    }*@
                                         <div class="col-menu col-md-3">
                                             <h6 class="title">TOP</h6>
                                             <div class="content">
@@ -191,11 +191,11 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-controller="Cart" asp-action="Index" >Cart</a></li>
+                                <li><a asp-controller="Cart" asp-action="Index">Cart</a></li>
                                 <li><a asp-action="Index" asp-controller="Checkout">Checkout</a></li>
-                                <li><a asp-controller="MyAccount" asp-action="Index" >My Account</a></li>
-                                <li><a asp-controller="Home" asp-action="Wishlist" >Wishlist</a></li>
-                          
+                                <li><a asp-controller="MyAccount" asp-action="Index">My Account</a></li>
+                                <li><a asp-controller="Home" asp-action="Wishlist">Wishlist</a></li>
+
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Service">Our Service</a></li>
@@ -210,7 +210,7 @@
                         <li class="side-menu">
                             <a href="#">
                                 <i class="fa fa-shopping-bag"></i>
-                                <span class="badge">3</span>
+                                @(await Component.InvokeAsync("CartNumber"))
                             </a>
                         </li>
                     </ul>
@@ -220,32 +220,7 @@
 
             <!-- add the cart deatil here from action -->
             <!-- Start Side Menu -->
-            <div class="side">
-                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                <li class="cart-box">
-                    <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="~/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="~/images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="~/images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
-                    </ul>
-                </li>
-            </div>
+            @(await Component.InvokeAsync("CartSideBar"))
             <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
@@ -463,7 +438,7 @@
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                             </ul>
-                                                            <a class="cart" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model[0].ProductID">Add to Cart</a>
+                                                            <a class="cart" asp-controller="Cart" asp-action="AddToCart" asp-route-ProductId="@item.ProductID">Add to Cart</a>
                                                         </div>
                                                     </div>
                                                     <div class="why-text">
@@ -715,9 +690,7 @@
                     data: { q: q },
                      success: function (result) {
                          $("#box").html(result);
-                        alert("you searched for ...");
                         console.log(result);
-                     /* $("#box").innerHTML = request.response;*/
                      }
 
 

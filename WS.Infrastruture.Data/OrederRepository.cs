@@ -33,9 +33,9 @@ namespace WS.Infrastruture.Data
                 //add seller count in each transition
               var order1=  context.Entry(order).Collection(a => a.Lines).Query().Include(a => a.Product);
               
-                foreach (var item in order1.Select(a => a.Product) )
+                foreach (var item in order1.Include(a => a.Product).ToList() )
                 {
-                    item.SellerCount++;
+                    item.Product.SellerCount++;
                 }
              
                 context.SaveChanges();

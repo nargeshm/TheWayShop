@@ -11,6 +11,7 @@ using WS.Core.Entites;
 
 namespace PresentataionHost.PaymentSystems
 {
+    //http://localhost:60504
     public class PayIr : IPayment
     {
         public PaymentResult pay(string price)
@@ -79,4 +80,5 @@ namespace PresentataionHost.PaymentSystems
             return JsonConvert.DeserializeObject<VerifyPayment>(result);
         }
     }
+
 }

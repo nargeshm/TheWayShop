@@ -35,7 +35,7 @@ namespace PresentataionHost.Controllers
             return View(new Order());
         }
         [HttpPost]
-        //[AutoValidateAntiforgeryToken]
+        [AutoValidateAntiforgeryToken]
         public IActionResult Index(Order order)
         {
             var totalPice = cart.GetTotalPrice();

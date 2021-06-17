@@ -30,9 +30,9 @@
                             <tr>
                                 <th>Images</th>
                                 <th>Product Name</th>
+                                <th>Size</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
-                                <th>Size</th>
                                 <th>Total</th>
                                 <th>Remove</th>
                             </tr>
@@ -41,39 +41,40 @@
                             @foreach (var item in Model.CartLines)
                             {
 
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-                                            <img class="img-fluid" src="~/images/@item.Product.Medias[0].Path" alt="" />
-                                        </a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-                                            @item.Product.Name
-                                        </a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ @item.Product.Price .0</p>
-                                    </td>
+                            <tr>
+                                <td class="thumbnail-img">
+                                    <a href="#">
+                                        <img class="img-fluid" src="~/images/@item.Product.Medias[0].Path" alt="" />
+                                    </a>
+                                </td>
+                                <td class="name-pr">
+                                    <a href="#">
+                                        @item.Product.Name
+                                    </a>
+                                </td>
+                                <td class="name-pr">
+                                    <a href="#">
+                                        @item.Size
+                                    </a>
+                                </td>
+                                <td class="price-pr">
+                                    <p>$ @item.Product.Price .0</p>
+                                </td>
 
-                                    <!-- Add ajax function "AddQty()"  -->
-                                    <td class="quantity-box"><input oninput="AddQty()" type="number" size="4" value="@item.Quantity" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="name-pr">
-                                        <a href="#">
-                                            @item.Size
-                                        </a>
-                                    </td>
-                                    <td class="total-pr">
-                                        <p id="Total">$ @(@item.Quantity * @item.Product.Price) .0</p>
-                                    </td>
+                                <!-- Add ajax function "AddQty()"  -->
+                                <td class="quantity-box"><input oninput="AddQty()" type="number" size="4" value="@item.Quantity" min="0" step="1" class="c-input-text qty text"></td>
 
-                                    <td class="remove-pr">
-                                        <a asp-action="RemoveLine" asp-controller="Cart" asp-route-ProductId="@item.Product.ProductID">
-                                            <i class="fas fa-times"></i>
-                                        </a>
+                                <td class="total-pr">
+                                    <p id="Total">$ @(@item.Quantity * @item.Product.Price) .0</p>
+                                </td>
 
-                                    </td>
-                                </tr>
+                                <td class="remove-pr">
+                                    <a asp-action="RemoveLine" asp-controller="Cart" asp-route-ProductId="@item.Product.ProductID">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>

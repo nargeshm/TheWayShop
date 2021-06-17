@@ -6,9 +6,7 @@ namespace WS.Core.Entites
     public class Order
     {
         public int OrderID { get; set; }
-
         public List<CartLine> Lines { get; set; }
-
         public Guid UserId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

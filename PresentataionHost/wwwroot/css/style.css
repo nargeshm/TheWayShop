@@ -651,7 +651,7 @@ nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover {
 
 .arrow::before {
     font-family: 'FontAwesome';
-    content: "\f0d7";
+    content: "\25be";
     margin-left: 5px;
     margin-top: 2px;
     border: none;

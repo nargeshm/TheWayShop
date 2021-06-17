@@ -44,6 +44,11 @@ namespace PresentataionHost.Controllers
                     ViewBag.transId = verifyResult.transId;
                     //return View(model);
                 }
+                else if (verifyResult.Status == -5)
+                {
+                    ViewBag.result = "تراکنش با خطا مواجه شده است ";
+                    ViewBag.transId = verifyResult.transId;
+                }
                 else
                 {
                     
